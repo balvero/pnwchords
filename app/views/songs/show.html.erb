@@ -15,10 +15,12 @@
   <%= @song.key %>
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @song.body %>
-</p>
+<pre data-key="<%= @song.key %>">
+<%= @song.body %>
+
+</pre>
+
+
 
 <p>
   <strong>Artist:</strong>
