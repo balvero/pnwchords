@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  # before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /songs
   # GET /songs.json
@@ -22,6 +22,7 @@ class SongsController < ApplicationController
 
   # GET /songs/1/edit
   def edit
+    @user_id = @song.user_id
   end
 
   # POST /songs
