@@ -1,5 +1,7 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /songs
   # GET /songs.json
@@ -15,6 +17,7 @@ class SongsController < ApplicationController
   # GET /songs/new
   def new
     @song = Song.new
+    @user_id = current_user.id
   end
 
   # GET /songs/1/edit
@@ -69,6 +72,15 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :key, :body, :artist_id)
+      params.require(:song).permit(:title, :key, :body, :artist_id, :user_id)
     end
+
+
+    def require_same_user
+      if current_user.id != @song.user_id
+        flash[:notice] = 'You can only edit or delete the Songs you added.'
+        redirect_to songs_path
+      end
+    end
+
 end

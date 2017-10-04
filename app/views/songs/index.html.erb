@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User</th>
       <th>Title</th>
       <th>Key</th>
       <th>Body</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
+        <td><%= song.user_id %></td>
         <td><%= song.title %></td>
         <td><%= song.key %></td>
         <td><%= song.body %></td>
