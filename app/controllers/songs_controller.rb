@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :can_access, only: [:edit, :update, :destroy]
 
   # GET /songs
   # GET /songs.json
@@ -78,8 +78,10 @@ class SongsController < ApplicationController
     end
 
 
-    def require_same_user
-      if current_user.id != @song.user_id
+    def can_access
+      if current_user.id == @song.user_id or current_user.role == :site_admin
+        return true
+      else
         flash[:notice] = 'You can only edit or delete the Songs you added.'
         redirect_to songs_path
       end

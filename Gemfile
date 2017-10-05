@@ -63,6 +63,7 @@ end
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'petergate'
 
 
 ruby "2.4.2"
