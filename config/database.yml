@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: rails-chords_production
+  username: rails-chords
+  password: <%= ENV['RAILS-CHORDS_DATABASE_PASSWORD'] %>
