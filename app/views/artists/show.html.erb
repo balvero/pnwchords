@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @artist.name %></h2>
+<div class="meta">
+  <span><%= link_to 'Edit', edit_artist_path(@artist), class: 'badge badge-success' %> </span>
+  <span><%= link_to 'Back', artists_path, class: 'badge badge-secondary' %></span>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<hr />
+<ul class="list">
+  <% @artist.songs.each do |song| %>
+      <li><%= link_to song.title, song %></li>
+  <% end %>
+</ul>

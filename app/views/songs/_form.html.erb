@@ -11,33 +11,30 @@
     </div>
   <% end %>
 
-    <div class="field">
-      <%= @user_id %>
-      <%= form.text_field 'user_id', :value => @user_id%>
+    <div class="form-group">
+      <%= form.hidden_field 'user_id', :value => @user_id, class: 'form-control' %>
     </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :song_title %>
+    <%= form.text_field :title, id: :song_title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :key %>
-    <%= form.text_field :key, id: :song_key %>
+    <%= form.text_field :key, id: :song_key, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_area :body, id: :song_body %>
+    <%= form.text_area :body, id: :song_body, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :artist_id %>
-    <%= form.text_field :artist_id, id: :song_artist_id %>
-    <%= form.collection_select :artist_id, Artist.order(:name), :id, :name, include_blank: true %>
+  <div class="form-group">
+    <%= form.collection_select :artist_id, Artist.order(:name), :id, :name, include_blank: true, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>

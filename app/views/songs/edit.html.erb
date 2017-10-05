@@ -1,6 +1,6 @@
-<h1>Editing Song</h1>
+<h1>Editing <%= @song.title %></h1>
 
 <%= render 'form', song: @song %>
-
-<%= link_to 'Show', @song %> |
-<%= link_to 'Back', songs_path %>
+<hr />exit
+<%= link_to 'Show', @song, class: 'btn btn-secondary' %>
+<%= link_to 'Back', songs_path, class: 'btn btn-secondary' %>

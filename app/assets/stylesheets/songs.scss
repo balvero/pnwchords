@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 span.c {
-  font-weight: bold;
-  color: #2159D6;
+  font-weight: 600;
+  color: #e74c3c;
 }
 
 .transpose-keys {
   margin: 10px 0;
   overflow: auto;
-  font: normal 11px sans-serif;
+  font: normal 13px sans-serif;
 }
 .transpose-keys a {
   display: block;
@@ -24,8 +24,27 @@ span.c {
   padding: .4em 0;
   border: solid 1px transparent;
   outline: none;
+  font-weight: 600;
 }
 .transpose-keys a.selected {
-  background: #2159D6;
+  background: #e74c3c;
   color: #FFF;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+ul.list li {
+  line-height: 180%;
+}
+
+.artist a {
+  font-size: 14px;
+  font-style: italic;
+  color: #333 !important;
 }

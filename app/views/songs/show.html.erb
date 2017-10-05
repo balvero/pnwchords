@@ -1,31 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User Id:</strong>
-  <%= @song.user_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @song.title %>
-</p>
-
-<p>
-  <strong>Key:</strong>
-  <%= @song.key %>
-</p>
-
-<pre data-key="<%= @song.key %>">
+<h1><%= @song.title %> <%= link_to 'Edit', edit_song_path(@song), class: 'btn btn-sm btn-primary' %></h1>
+<div class="meta">
+  <ul>
+    <li><strong>Artist: </strong> <%= link_to @song.artist.name, @song.artist, class: 'badge badge-secondary' %></li>
+    <li><strong>Key: </strong> <span class="badge badge-secondary"><%= @song.key %></span></li>
+  </ul>
+</div>
+<div class="song-body">
+  <pre data-key="<%= @song.key %>">
 <%= @song.body %>
 
 </pre>
 
+</div>
 
 
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist.name %>
-</p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

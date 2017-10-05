@@ -1,35 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col">
+    <%= link_to 'Add Song', new_song_path, class: 'btn btn-sm btn-primary' %>
+  </div>
 
-<h1>Songs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Key</th>
-      <th>Body</th>
-      <th>Artist</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+</div>
+<div id="song-list" class="row">
+  <div class="col">
+    <ul class="list">
     <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.user_id %></td>
-        <td><%= song.title %></td>
-        <td><%= song.key %></td>
-        <td><%= song.body %></td>
-        <td><%= song.artist %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+          <li><%= link_to song.title, song, class: 'bold' %> by <span class="artist"><%= link_to song.artist.name, song.artist %></span>
+          <span><%= link_to 'Edit', edit_song_path(song), class: 'badge badge-success' %></span>
+          <span><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-danger' %></span>
+          </li>
     <% end %>
-  </tbody>
-</table>
+    </ul>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Song', new_song_path %>
