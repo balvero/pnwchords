@@ -11,6 +11,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @page_title = @artist.name
   end
 
   # GET /artists/new

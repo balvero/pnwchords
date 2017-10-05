@@ -12,6 +12,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    @page_title = "#{@song.title} by #{@song.artist.name}"
   end
 
   # GET /songs/new
