@@ -64,6 +64,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'petergate'
+gem 'cocoon'
+gem 'simple_form'
 
 
 ruby "2.4.2"

@@ -48,3 +48,15 @@ ul.list li {
   font-style: italic;
   color: #333 !important;
 }
+
+.song_body textarea {
+  min-height: 500px;
+}
+
+select {
+  height: calc(2.25rem + 2px);
+}
+
+input[aria-invalid='true'], textarea[aria-invalid='true'] {
+  border: 3px solid red;
+}

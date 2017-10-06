@@ -1,20 +1,6 @@
-<%= form_with(model: artist, local: true) do |form| %>
-  <% if artist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+<%= simple_form_for artist  do |form| %>
 
-      <ul>
-      <% artist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :artist_name, class: 'form-control' %>
-  </div>
+    <%= form.input :name, label: 'Name', error: 'Name should not be blank.' %>
 
   <div class="actions">
     <%= form.submit 'Save', class: 'btn btn-primary' %>

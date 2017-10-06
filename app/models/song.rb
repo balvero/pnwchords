@@ -5,4 +5,5 @@ class Song < ApplicationRecord
   validates_presence_of :title, :key, :body
 
   belongs_to :artist
+  accepts_nested_attributes_for :artist
 end

@@ -15,4 +15,31 @@
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require cocoon
 //= require_tree .
+
+
+$(document).ready(function() {
+    // close the alert
+    setTimeout(function() {
+        $(".alert").alert('close');
+    }, 4000);
+
+
+    $("#song_artist_id a.add_fields").
+    data("association-insertion-position", 'before').
+    data("association-insertion-node", 'this');
+
+    $('#song_artist_id').bind('cocoon:after-insert',
+        function() {
+            $("#song_artist_id").hide();
+            $("#song_artist_id a.add_fields").hide();
+        });
+    $('#song_artist_id').bind("cocoon:after-remove",
+        function() {
+            $("#song_artist_id").show();
+            $("#song_artist_id a.add_fields").show();
+        });
+
+
+});
