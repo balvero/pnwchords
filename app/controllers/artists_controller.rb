@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  access all: [:show, :index], user: {except: [:destroy, :edit]}, site_admin: :all
 
   # GET /artists
   # GET /artists.json

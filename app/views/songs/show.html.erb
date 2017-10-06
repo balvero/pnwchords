@@ -1,4 +1,10 @@
-<h1><%= @song.title %> <%= link_to 'Edit', edit_song_path(@song), class: 'btn btn-sm btn-primary' %></h1>
+<h1><%= @song.title %>
+</h1>
+<% if logged_in?(:site_admin) or current_user.id == @song.user_id %>
+    <%= link_to 'Edit', edit_song_path(@song), class: 'badge badge-primary' %>
+    <%= link_to 'Back', songs_path, class: 'badge badge-secondary' %>
+<% end %>
+
 <div class="meta">
   <ul>
     <li><strong>Artist: </strong> <%= link_to @song.artist.name, @song.artist, class: 'badge badge-secondary' %></li>
@@ -8,11 +14,6 @@
 <div class="song-body">
   <pre data-key="<%= @song.key %>">
 <%= @song.body %>
-
 </pre>
-
 </div>
 
-
-
-<%= link_to 'Back', songs_path %>

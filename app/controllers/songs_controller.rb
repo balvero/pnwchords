@@ -1,7 +1,8 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :can_access, only: [:edit, :update, :destroy]
+  before_action :can_access, only: [:edit, :update]
+  access all: [:show, :index], user: {except: [:destroy]}, site_admin: :all
 
   # GET /songs
   # GET /songs.json
