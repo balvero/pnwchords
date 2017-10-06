@@ -1,9 +1,11 @@
 <h1><%= @song.title %>
 </h1>
-<% if logged_in?(:site_admin) or current_user.id == @song.user_id %>
+
+<% if user_signed_in? and (logged_in?(:site_admin) or current_user.id == @song.user_id) %>
     <%= link_to 'Edit', edit_song_path(@song), class: 'badge badge-primary' %>
     <%= link_to 'Back', songs_path, class: 'badge badge-secondary' %>
 <% end %>
+
 
 <div class="meta">
   <ul>
