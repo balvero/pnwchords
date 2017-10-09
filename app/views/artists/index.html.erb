@@ -1,7 +1,9 @@
 <div class="row">
-  <div class="col">
-    <%= link_to 'Add Artist', new_artist_path, class: 'btn btn-sm btn-primary' %>
-  </div>
+  <% if logged_in?(:site_admin) %>
+    <div class="col">
+      <%= link_to 'Add Artist', new_artist_path, class: 'btn btn-sm btn-primary' %>
+    </div>
+  <% end %>
 
 </div>
 <div id="artist-list" class="row">
