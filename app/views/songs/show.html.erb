@@ -3,14 +3,14 @@
 
 <% if user_signed_in? and (logged_in?(:site_admin) or current_user.id == @song.user_id) %>
     <%= link_to 'Edit', edit_song_path(@song), class: 'badge badge-primary' %>
-    <%= link_to 'Back', songs_path, class: 'badge badge-secondary' %>
 <% end %>
-
+<%= link_to 'Back', songs_path, class: 'badge badge-secondary' %>
 
 <div class="meta">
   <ul>
     <li><strong>Artist: </strong> <%= link_to @song.artist.name, @song.artist, class: 'badge badge-secondary' %></li>
     <li><strong>Key: </strong> <span class="badge badge-secondary"><%= @song.key %></span></li>
+    <li><strong>Tags: </strong> <%= render @song.tags %></li>
   </ul>
 </div>
 <div class="song-body">

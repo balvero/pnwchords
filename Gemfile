@@ -66,6 +66,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'petergate'
 gem 'cocoon'
 gem 'simple_form'
+gem 'acts-as-taggable-on', '~> 5.0'
 
 
 ruby "2.4.2"

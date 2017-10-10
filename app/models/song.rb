@@ -1,6 +1,7 @@
 class Song < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
+  acts_as_taggable
 
   validates_presence_of :title, :key, :body
 
