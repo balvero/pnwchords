@@ -17,7 +17,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                   <%= link_to 'Add Song', new_song_path, class: 'dropdown-item' %>
                   <%= link_to 'Add Artist', new_artist_path, class: 'dropdown-item' %>
-                  <a class="dropdown-item" href="#">My Songs</a>
+                  <%= link_to 'My Songs', my_songs_path, class: 'dropdown-item' %>
                   <%= link_to 'Logout', destroy_user_session_path,  method: :delete, class: 'dropdown-item' %>
                 </div>
               </li>

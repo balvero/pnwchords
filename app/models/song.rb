@@ -6,4 +6,8 @@ class Song < ApplicationRecord
 
   belongs_to :artist
   accepts_nested_attributes_for :artist
+
+  def self.user_songs(current_user)
+    where("user_id = #{current_user}")
+  end
 end

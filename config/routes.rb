@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :songs
   resources :artists
 
+  get 'my-songs', to: 'songs#my_songs'
+
   root 'songs#index'
 end

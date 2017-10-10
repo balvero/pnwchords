@@ -1,0 +1,25 @@
+<div class="row">
+  <% if logged_in?(:site_admin) %>
+      <div class="col">
+        <%= link_to 'Add Song', new_song_path, class: 'btn btn-sm btn-primary' %>
+      </div>
+  <% end %>
+
+</div>
+<div id="song-list" class="row">
+  <div class="col">
+    <ul class="list">
+
+      <% @songs.each do |song| %>
+
+          <li><%= link_to song.title, song, class: 'bold' %> by <span class="artist"><%= link_to song.artist.name, song.artist %></span>
+
+                <span><%= link_to 'Edit', edit_song_path(song), class: 'badge badge-success' %></span>
+                <span><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-danger' %></span>
+
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

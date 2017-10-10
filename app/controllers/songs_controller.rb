@@ -4,11 +4,14 @@ class SongsController < ApplicationController
   before_action :can_access, only: [:edit, :update]
   access all: [:show, :index], user: {except: [:destroy]}, site_admin: :all
 
-  @song_keys = ['C' => 'C']
   # GET /songs
   # GET /songs.json
   def index
     @songs = Song.all.order('title ASC')
+  end
+
+  def my_songs
+    @songs = Song.user_songs(current_user.id)
   end
 
   # GET /songs/1
