@@ -19,7 +19,12 @@
 //= require_tree .
 
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function () {
+
+    $(function() {
+        $('pre').transpose();
+    });
+
     // close the alert
     setTimeout(function() {
         $(".alert").alert('close');
