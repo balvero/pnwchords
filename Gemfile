@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -67,6 +68,7 @@ gem 'petergate'
 gem 'cocoon'
 gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 5.0'
+gem 'omniauth-facebook'
 
 
 ruby "2.4.2"
