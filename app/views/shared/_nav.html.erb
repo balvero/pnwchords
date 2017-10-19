@@ -13,11 +13,12 @@
           <ul class="navbar-nav ml-auto">
             <% if current_user %>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <%= current_user.email %></a>
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <%= current_user.name? ? current_user.name : current_user.email %></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                   <%= link_to 'Add Song', new_song_path, class: 'dropdown-item' %>
                   <%= link_to 'Add Artist', new_artist_path, class: 'dropdown-item' %>
                   <%= link_to 'My Songs', my_songs_path, class: 'dropdown-item' %>
+                  <%= link_to 'Edit Profile',edit_user_registration_path, class: 'dropdown-item' %>
                   <%= link_to 'Logout', destroy_user_session_path,  method: :delete, class: 'dropdown-item' %>
                 </div>
               </li>

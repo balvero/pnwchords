@@ -27,7 +27,7 @@ class User < ApplicationRecord
     where(email: auth.info.email).first_or_initialize.tap do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      #user.full_name = auth.info.name
+      user.name = auth.info.name
       #user.profile_image = auth.info.image
       user.save
     end
