@@ -68,6 +68,7 @@ gem 'petergate'
 gem 'cocoon'
 gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 5.0'
+gem 'omniauth'
 gem 'omniauth-facebook'
 
 
