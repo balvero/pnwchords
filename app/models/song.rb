@@ -11,4 +11,9 @@ class Song < ApplicationRecord
   def self.user_songs(current_user)
     where("user_id = #{current_user}")
   end
+
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+  end
+
 end

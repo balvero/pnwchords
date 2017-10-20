@@ -6,8 +6,24 @@
   <% end %>
 
 </div>
+<div id="search-div" class="row">
+  <div class="col-lg-6">
+    <%= form_tag(songs_path, :method => 'get', id: 'search-form') do %>
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], placeholder: 'Search Songs', class: 'form-control' %>
+          <span class="input-group-btn">
+            <%= submit_tag 'Search', :name => nil, class: 'btn btn-success' %>
+          </span>
+
+        </div>
+
+    <% end %>
+  </div>
+</div>
 <div id="song-list" class="row">
+
   <div class="col">
+    <% if @songs.any? %>
     <ul class="list">
     <% @songs.each do |song| %>
 
@@ -19,6 +35,11 @@
           </li>
     <% end %>
     </ul>
+    <% else %>
+        <div class="not-found">
+          No songs found...
+        </div>
+    <% end %>
   </div>
 </div>
 

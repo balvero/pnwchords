@@ -8,6 +8,11 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @songs = Song.all.order('title ASC')
+    if params[:search]
+      @songs = Song.search(params[:search]).order('title ASC')
+    else
+      @songs = Song.all.order('title ASC')
+    end
   end
 
   def my_songs
