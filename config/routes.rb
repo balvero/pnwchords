@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks', :registrations => 'registrations' }
 
   resources :songs
   resources :artists
   resources :tags, only: [:index, :show]
+  resources :authentications, only: [:destroy]
 
   get 'my-songs', to: 'songs#my_songs'
 
