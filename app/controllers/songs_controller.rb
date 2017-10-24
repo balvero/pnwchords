@@ -9,9 +9,9 @@ class SongsController < ApplicationController
   def index
     @songs = Song.all.order('title ASC')
     if params[:search]
-      @songs = Song.search(params[:search]).order('title ASC').page(params[:page]).per(30)
+      @songs = Song.search(params[:search]).order('title ASC').page(params[:page]).per(20)
     else
-      @songs = Song.all.order('title ASC').page(params[:page]).per(30)
+      @songs = Song.all.order('title ASC').page(params[:page]).per(20)
     end
   end
 

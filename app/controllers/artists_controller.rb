@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @page_title = @artist.name
-    @songs = @artist.songs.order('title ASC').page(params[:page]).per(30)
+    @songs = @artist.songs.order('title ASC').page(params[:page]).per(20)
   end
 
   # GET /artists/new
