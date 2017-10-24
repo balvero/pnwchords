@@ -13,7 +13,7 @@ class Song < ApplicationRecord
   end
 
   def self.search(search)
-    joins(:artist).where('songs.title LIKE ? OR artists.name LIKE ?', "%#{search}%", "%#{search}%")
+    joins(:artist).where('LOWER(songs.title) LIKE ? OR LOWER(artists.name) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%")
   end
 
 end
