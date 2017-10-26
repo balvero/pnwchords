@@ -78,7 +78,11 @@ a.facebook:before {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
 }
 
-#search-div {
+#main {
+  min-height: 80vh;
+}
+
+.search-div {
   margin-bottom: 10px;
 }
 

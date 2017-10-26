@@ -14,7 +14,7 @@
           <li><%= link_to artist.name, artist, class: 'bold' %></span>
             <% if logged_in?(:site_admin) %>
               <span><%= link_to 'Edit', edit_artist_path(artist), class: 'badge badge-success' %></span>
-              <span><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-danger' %></span>
+              <span><%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-danger' %></span>
             <% end %>
           </li>
       <% end %>

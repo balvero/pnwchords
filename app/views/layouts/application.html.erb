@@ -29,16 +29,15 @@
 
 <%= render 'shared/nav' %>
 
-<div class="container">
+<div id="main" class="container">
+  <%= render 'shared/search' %>
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-8">
       <%= yield %>
     </div>
 
-    <div class="col-lg-3">
-      <aside id="sidebar" class="bg-light">
-
-      </aside>
+    <div class="col-lg-4">
+      <%= render 'shared/sidebar' %>
 
     </div>
 
