@@ -7,7 +7,7 @@ module ApplicationHelper
         },
         {
             url: artists_path,
-            title: 'Artist'
+            title: 'Artists'
         },
 
 
