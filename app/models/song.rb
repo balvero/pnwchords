@@ -16,4 +16,8 @@ class Song < ApplicationRecord
     joins(:artist).where('LOWER(songs.title) LIKE ? OR LOWER(artists.name) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%")
   end
 
+  def self.recent
+    order("created_at DESC").limit(10)
+  end
+
 end

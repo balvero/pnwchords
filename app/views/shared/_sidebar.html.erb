@@ -1,3 +1,9 @@
 <aside id="sidebar">
+  <h3>Recently Added Songs</h3>
+  <ul>
+    <% Song.recent.each do |song| %>
+        <li><%= link_to song.title, song %></li>
+    <% end %>
+  </ul>
 
 </aside>
