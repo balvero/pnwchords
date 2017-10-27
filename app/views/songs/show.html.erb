@@ -1,4 +1,4 @@
-<h1><%= @song.title %>
+<h1 class="title"><%= @song.title %> <span>by <%= link_to @song.artist.name, @song.artist %></span>
 </h1>
 
 <% if user_signed_in? and (logged_in?(:site_admin) or current_user.id == @song.user_id) %>
@@ -8,9 +8,11 @@
 
 <div class="meta">
   <ul>
-    <li><strong>Artist: </strong> <%= link_to @song.artist.name, @song.artist, class: 'badge badge-secondary' %></li>
-    <li><strong>Key: </strong> <span class="badge badge-secondary"><%= @song.key %></span></li>
-    <li><strong>Tags: </strong> <%= render @song.tags %></li>
+    <li>Key: <span class="badge badge-secondary"><%= @song.key %></span>
+    <% if @song.tags.count > 0 %>
+          Tags: <%= render @song.tags %>
+    <% end %>
+    </li>
   </ul>
 </div>
 <div class="song-body">
