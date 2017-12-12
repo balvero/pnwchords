@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
+
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
@@ -19,7 +19,7 @@
 //= require_tree .
 
 
-$(document).on("turbolinks:load", function () {
+$(document).ready(function () {
 
     $(function() {
         $('pre').transpose();

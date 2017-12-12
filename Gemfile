@@ -72,4 +72,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'kaminari'
 
-ruby "2.4.2"
+# ruby "2.4.2"
